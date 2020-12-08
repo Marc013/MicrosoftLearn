@@ -53,7 +53,7 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript: |
-            $Stuff = '${{ secrets.AZURE_CREDENTIALS }}' | Export-Clixml -Path ./export.xml
+            $Stuff = "${{ secrets.AZURE_CREDENTIALS }}" | Export-Clixml -Path ./export.xml
             Write-Host "Var stuff: '$($Stuff)'"
             Get-Content -Path ./export.xml | Out-String
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
