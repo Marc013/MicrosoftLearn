@@ -2,7 +2,7 @@
 
 name: Testing-Azure-connectivity
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
 #   push:
@@ -35,7 +35,7 @@ jobs:
           enable-AzPSSession: true # optional
           # Set this value to true to enable support for accessing tenants without subscriptions
           allow-no-subscriptions: false # optional
-      
+
       - name: Azure PowerShell Action - getting all resource groups
         uses: Azure/powershell@v1
         with:
@@ -43,7 +43,7 @@ jobs:
           inlineScript: |
             Write-Host "Listing all resource groups:"
             Get-AzResourceGroup
-            
+
             Write-Host "Resource group listing end"
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
           azPSVersion: latest
