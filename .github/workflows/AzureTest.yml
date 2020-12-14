@@ -58,7 +58,7 @@ jobs:
           # Specify the Az PowerShell script here.
           inlineScript: |
             Output as JSON
-            "${{ secrets.AZURE_CREDENTIALS }}" | ConvertFrom-Json
+            '${{ secrets.AZURE_CREDENTIALS }}' | ConvertFrom-Json
 
             # Write-Host "Between double quotes:"
             # Write-Host "${{ secrets.AZURE_CREDENTIALS }}"
