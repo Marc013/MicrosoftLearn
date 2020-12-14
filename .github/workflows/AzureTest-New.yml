@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Testing-Azure-connectivity
+name: Testing-Azure-connectivity-NEW
 
 # Controls when the action will run.
 on:
