@@ -57,25 +57,8 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript: |
-            $Owner = 'Marc013'
-            $RepoName = 'MicrosoftLearn'
-            $GitHubSecretName = 'AZURE_CREDENTIALS'
             $KeyVaultName = 'MykeyVault013'
             $KeyVaultSecretName = 'AZURE-CREDENTIALS'
-            $ContentType = 'application/vnd.github.v3+json'
-            $BaseUri = "https://api.github.com/repos/$Owner/$RepoName/actions/secrets"
-            $PublicKeyUri = "$BaseUri/public-key"
-            $SecretUri = "$BaseUri/$GitHubSecretName"
-
-            $Headers = @{ "Authorization" = "token $OauthToken" }
-
-            $RestGetParam = @{
-                Method      = "Get"
-                Uri         = $PublicKeyUri
-                Headers     = $Headers
-                ContentType = $ContentType
-            }
-            $PublicRepoKey = Invoke-RestMethod @RestGetParam
 
             $SecretValue = Get-AzKeyVaultSecret -VaultName $KeyVaultName -Name $KeyVaultSecretName
             $ClientSecret = $SecretValue.SecretValue | ConvertFrom-SecureString -AsPlainText
