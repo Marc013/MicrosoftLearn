@@ -1,0 +1,53 @@
+{
+    "definitions": {},
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "name",
+        "age",
+        "emailAddress",
+        "phoneNumber"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+                "Ashley"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "age": {
+            "$id": "#/properties/age",
+            "type": "integer",
+            "title": "The Age Schema",
+            "default": 0,
+            "examples": [
+                25
+            ]
+        },
+        "emailAddress": {
+            "Sid": "#/properties/emailAddress",
+            "type": "string",
+            "title": "The Email Schema",
+            "default": "",
+            "examples": [
+                "Jans.Janssens@amsterdam.nl"
+            ],
+            "pattern": "^.+@amsterdam\\.nl$"
+        },
+        "phoneNumber": {
+            "$id": "#/properties/phoneNumber",
+            "type": "string",
+            "title": "The PhoneNumber Schema",
+            "examples": [
+                "555-1212"
+            ],
+            "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
+        }
+    }
+}
